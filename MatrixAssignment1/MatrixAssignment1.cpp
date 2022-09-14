@@ -44,7 +44,6 @@ void initMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[
 		{
 			val += 4; //I used this to increment the value of the matrix by 4
 			matrix1[k][v] = val; //Assing the value of val to the matrix
-
 		}
 		SIZE - 1;
 	}
@@ -74,34 +73,32 @@ void multiplyMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matr
 
 void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]) //This function is used for printing the matrices
 {
-	//!!!COMMENT OUT THE FIRST AND SECOND MATRICES IF YOU ARE WORKING ON BIG NUMBERS!!!
-	
 	//Prints out the first matrix
 	cout << "Matrix 1:" << endl;
-	for (int row = 0; row < SIZE; row++)
+	for (int i = 0; i < SIZE; i++)
 	{
-		for (int col = 0; col < SIZE; col++)
-			cout << matrix1[row][col] << '\t';
+		for (int j = 0; j < SIZE; j++)
+			cout << matrix1[i][j] << '\t';
 		cout << endl;
 	}
 	cout << endl;
 
 	//Prints out the second matrix
 	cout << "Matrix 2:" << endl;
-	for (int row = 0; row < SIZE; row++)
+	for (int i = 0; i < SIZE; i++)
 	{
-		for (int col = 0; col < SIZE; col++)
-			cout << matrix2[row][col] << '\t';
+		for (int j = 0; j < SIZE; j++)
+			cout << matrix2[i][j] << '\t';
 		cout << endl;
 	}
 	cout << endl;
 
 	//Prints out the third matrix, aka the result of the multiplication
 	cout << "Result of Matrix 1 and Matrix 2 multiplied:" << endl;
-	for (int row = 0; row < SIZE; row++)
+	for (int i = 0; i < SIZE; i++)
 	{
-		for (int col = 0; col < SIZE; col++)
-			cout << matrix3[row][col] << '\t';
+		for (int j = 0; j < SIZE; j++)
+			cout << matrix3[i][j] << '\t';
 		cout << endl;
 	}
 }
