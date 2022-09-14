@@ -3,9 +3,10 @@ Coded by Halil Tanribilen
 CPSC 246 Matrix Assignment - 9/14/2022
 */
 #include <iostream>
+
 using namespace std;
 
-const int SIZE = 10; //Our global constant variable for matrix sizes
+const int SIZE = 5; //Global constant for the matrix size
 
 //Prototypes go here
 int getSquared(int num);
@@ -13,50 +14,22 @@ void initMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[
 void multiplyMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]);
 void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]);
 
-
-
 int main()
 {
 	int matrix1[SIZE][SIZE]; //I declared my variables and matrixes here
 	int matrix2[SIZE][SIZE];
 	int matrix3[SIZE][SIZE];
-	int val; 
 	
 	initMatrices(matrix1, matrix2, matrix3); //Calls the function to initialize the matrices
 	multiplyMatrices(matrix1, matrix2, matrix3); //Calls the function to multiply the matrices
 	printMatrices(matrix1, matrix2, matrix3); //Calls the function to print the matrices
 	
 	return 0;
-	
 }
 
-void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]) //This function is used for printing the matrices
+int getSquared(int num) //This function is used for getting the squared value of the number and it's purely meant for the matrix2 so we can initialize it with the specified pattern.
 {
-	//Prints out the first matrix
-	for (int row = 0; row < SIZE; row++)
-	{
-		for (int col = 0; col < SIZE; col++)
-			cout << matrix1[row][col] << '\t';
-		cout << endl;
-	}
-	cout << endl;
-
-	//Prints out the second matrix
-	for (int row = 0; row < SIZE; row++)
-	{
-		for (int col = 0; col < SIZE; col++)
-			cout << matrix2[row][col] << '\t';
-		cout << endl;
-	}
-	cout << endl;
-
-	//Prints out the third matrix, aka the result of the multiplication
-	for (int row = 0; row < SIZE; row++)
-	{
-		for (int col = 0; col < SIZE; col++)
-			cout << matrix3[row][col] << '\t';
-		cout << endl;
-	}
+	return num * num;
 }
 
 void initMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]) //This function initalizes the matrices
@@ -83,15 +56,14 @@ void initMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[
 		}
 		SIZE - 1;
 	}
-	
-	
-}
 
+
+}
 
 void multiplyMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]) //This is the multiplication function that I've looked from this source: https://www.geeksforgeeks.org/c-program-multiply-two-matrices/
 {
 	int i, j, k;
-	
+
 	for (i = 0; i < SIZE; i++) {
 		for (j = 0; j < SIZE; j++) {
 			matrix3[i][j] = 0;
@@ -101,7 +73,33 @@ void multiplyMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matr
 	}
 }
 
-int getSquared(int num) //This function is used for getting the squared value of the number and it's purely meant for the matrix2 so we can initialize it with the specified pattern.
+void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]) //This function is used for printing the matrices
 {
-	return num * num;
+	//!!!COMMENT OUT THE FIRST AND SECOND MATRICES IF YOU ARE WORKING ON BIG NUMBERS!!!
+	
+	//Prints out the first matrix
+	for (int row = 0; row < SIZE; row++)
+	{
+		for (int col = 0; col < SIZE; col++)
+			cout << matrix1[row][col] << '\t';
+		cout << endl;
+	}
+	cout << endl;
+
+	//Prints out the second matrix
+	for (int row = 0; row < SIZE; row++)
+	{
+		for (int col = 0; col < SIZE; col++)
+			cout << matrix2[row][col] << '\t';
+		cout << endl;
+	}
+	cout << endl;
+
+	//Prints out the third matrix, aka the result of the multiplication
+	for (int row = 0; row < SIZE; row++)
+	{
+		for (int col = 0; col < SIZE; col++)
+			cout << matrix3[row][col] << '\t';
+		cout << endl;
+	}
 }
