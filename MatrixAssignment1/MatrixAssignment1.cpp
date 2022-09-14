@@ -6,7 +6,7 @@ CPSC 246 Matrix Assignment - 9/14/2022
 
 using namespace std;
 
-const int SIZE = 5; //Global constant for the matrix size
+const int SIZE = 10; //Global constant for the matrix size
 
 //Prototypes go here
 int getSquared(int num);
@@ -16,7 +16,8 @@ void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3
 
 int main()
 {
-	int matrix1[SIZE][SIZE]; //I declared my variables and matrixes here
+	//I declared my variables and matrixes here
+	int matrix1[SIZE][SIZE]; 
 	int matrix2[SIZE][SIZE];
 	int matrix3[SIZE][SIZE];
 	
@@ -56,8 +57,6 @@ void initMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[
 		}
 		SIZE - 1;
 	}
-
-
 }
 
 void multiplyMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3[SIZE][SIZE]) //This is the multiplication function that I've looked from this source: https://www.geeksforgeeks.org/c-program-multiply-two-matrices/
@@ -78,6 +77,7 @@ void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3
 	//!!!COMMENT OUT THE FIRST AND SECOND MATRICES IF YOU ARE WORKING ON BIG NUMBERS!!!
 	
 	//Prints out the first matrix
+	cout << "Matrix 1:" << endl;
 	for (int row = 0; row < SIZE; row++)
 	{
 		for (int col = 0; col < SIZE; col++)
@@ -87,6 +87,7 @@ void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3
 	cout << endl;
 
 	//Prints out the second matrix
+	cout << "Matrix 2:" << endl;
 	for (int row = 0; row < SIZE; row++)
 	{
 		for (int col = 0; col < SIZE; col++)
@@ -96,6 +97,7 @@ void printMatrices(int matrix1[SIZE][SIZE], int matrix2[SIZE][SIZE], int matrix3
 	cout << endl;
 
 	//Prints out the third matrix, aka the result of the multiplication
+	cout << "Result of Matrix 1 and Matrix 2 multiplied:" << endl;
 	for (int row = 0; row < SIZE; row++)
 	{
 		for (int col = 0; col < SIZE; col++)
